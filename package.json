@@ -1,0 +1,28 @@
+{
+  "name": "faq-accordion-card",
+  "version": "1.0.0",
+  "description": "This is a solution to the [FAQ accordion card challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass sass/main.scss css/style.css",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClaytonDewey/faq-accordion-card.git"
+  },
+  "author": "Clayton Dewey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ClaytonDewey/faq-accordion-card/issues"
+  },
+  "homepage": "https://github.com/ClaytonDewey/faq-accordion-card#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.54.3"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
