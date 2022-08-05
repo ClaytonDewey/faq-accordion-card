@@ -1,3 +1,24 @@
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+}
 
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 30px auto;
+}
 
-/*# sourceMappingURL=style.css.map */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
