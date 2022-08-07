@@ -6,44 +6,24 @@ $bp-large: 90em; // 1440px;
 $mq-small: 'screen and (min-width: #{$bp-small})';
 $mq-large: 'screen and (min-width: #{$bp-large})';
 
-// colors
-/* ## Colors
-
-### Primary
-
-#### Text
-
-- Very dark desaturated blue: hsl(238, 29%, 16%)
-- Soft red: hsl(14, 88%, 65%)
-
-#### Gradient
-
-Background gradient:
-
-- Soft violet: hsl(273, 75%, 66%)
-- Soft blue: hsl(240, 73%, 65%)
-
-### Neutral
-
-#### Text
-
-- Very dark grayish blue: hsl(237, 12%, 33%)
-- Dark grayish blue: hsl(240, 6%, 50%)
-
-#### Dividers
-
-- Light grayish blue: hsl(240, 5%, 91%)
- */
-
 // font weights
 $fw-bold: 700;
 $fw-normal: 400;
 
 // font sizes
-$fs-400: 2.5rem;
+$fs-400: 3rem;
 $fs-300: 2rem;
 $fs-200: 1.8rem;
 $fs-100: 1.2rem;
+
+// colors
+$clr-orange: hsl(14, 88%, 65%);
+$clr-violet: hsl(273, 75%, 66%);
+$clr-blue: hsl(240, 73%, 65%);
+$clr-light-gray: hsl(240, 5%, 91%);
+$clr-gray: hsl(240, 6%, 50%);
+$clr-dark-gray: hsl(237, 12%, 33%);
+$clr-dark: hsl(238, 29%, 16%);
 
 *,
 *::after,
@@ -72,8 +52,10 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: rgb(101,101,231);
-  background: linear-gradient(0deg, rgba(101,101,231,1) 0%, rgba(175,103,233,1) 100%);
+  overflow-style: scrollbar;
+  background: $clr-blue;
+  background: linear-gradient(0deg, $clr-blue 0%, $clr-violet 100%);
+  color: $clr-light-gray;
   font-family: "Kumbh Sans", sans-serif;
   font-weight: 400;
   font-size: $fs-100;
@@ -88,14 +70,16 @@ body {
   background: white;
   height: 53.5rem;
   margin: 30px auto;
-  padding: 14rem 2.5rem 2.5rem;
-  border-radius: 1.5rem;
+  padding: 13rem 2.5rem 2.5rem;
+  border-radius: 2rem;
   background-image: url(../images/bg-pattern-mobile.svg);
   background-repeat: no-repeat;
   background-position: center top;
   box-shadow: 0px 10px 40px hsl(257, 35%, 47%);
 
   &__header {
+    margin-bottom: 2rem;
+
     img {
       display: block;
       height: 18rem;
@@ -107,11 +91,47 @@ body {
     }
     
     h1 {
+      font-size: $fs-400;
       text-transform: uppercase;
       text-align: center;
+      color: $clr-dark-gray;
     }
   }
 }
 
-  .attribution { font-size: 11px; text-align: center; }
-  .attribution a { color: hsl(228, 45%, 44%); }
+.accordion {
+
+  &__trigger {
+    background: transparent;
+    position: relative;
+    border: none;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid $clr-light-gray;
+    color: $clr-dark-gray;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: color .25s ease-in-out;
+
+    &:hover {
+      color: $clr-orange;
+    }
+  }
+
+  &__icon {
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url(../images/icon-arrow-down.svg);
+      background-repeat: no-repeat;
+      display: block;
+      height: .75rem;
+      width: 1rem;
+      top: 2rem;
+      right: 0;
+    }
+  }
+}
+
+  .attribution { color: white; font-size: 11px; text-align: center; }
+  .attribution a { color: white; }
