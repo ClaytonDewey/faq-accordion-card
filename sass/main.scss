@@ -88,7 +88,7 @@ body {
   background: white;
   height: 53.5rem;
   margin: 30px auto;
-  padding: 2.5rem;
+  padding: 14rem 2.5rem 2.5rem;
   border-radius: 1.5rem;
   background-image: url(../images/bg-pattern-mobile.svg);
   background-repeat: no-repeat;
@@ -97,7 +97,13 @@ body {
 
   &__header {
     img {
-     display: none;
+      display: block;
+      height: 18rem;
+      width: 23.7rem;
+      position: absolute;
+      top: -10.7rem;
+      left: 50%;
+      transform: translateX(-50%);
     }
     
     h1 {
