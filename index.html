@@ -8,7 +8,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <title>Frontend Mentor | FAQ Accordion Card</title>
+  <title>Frontend Mentor | FAQ accordion Card</title>
   <link rel="stylesheet" href="./css/style.css">
   <script src="index.js" defer></script>
 
@@ -24,22 +24,69 @@
       <h1 class="card__title">faq</h1>
     </header>
 
-    How many team members can I invite?
-    You can invite up to 2 additional users on the Free plan. There is no limit on
-    team members for the Premium plan.
+    <section id="accordionGroup" class="accordion" data-allow-toggle="true">
+      <h2>
+        <button aria-expanded="false" class="accordion__trigger" aria-controls="sect1" id="accordion1id">
+          <span class="accordion__title">
+            How many team members can I invite?
+            <i class="accordion__icon"></i>
+          </span>
+        </button>
+      </h2>
+      <div id="sect1" hidden="hidden" role="region" aria-labelledby="accordion1id" class="accordion__panel">
+        You can invite up to 2 additional users on the Free plan. There is no limit on
+        team members for the Premium plan.
+      </div>
 
-    What is the maximum file upload size?
-    No more than 2GB. All files in your account must fit your allotted storage space.
+      <h2>
+        <button class="accordion__trigger" aria-controls="sect2" id="accordion2id">
+          <span class="accordion__title">
+            What is the maximum file upload size?
+            <i class="accordion__icon"></i>
+          </span>
+        </button>
+      </h2>
+      <div id="sect2" class="accordion__panel" hidden="hidden" role="region" aria-labelledby="accordion2id">
+        No more than 2GB. All files in your account must fit your allotted storage space.
+      </div>
 
-    How do I reset my password?
-    Click “Forgot password” from the login page or “Change password” from your profile page.
-    A reset link will be emailed to you.
+      <h2>
+        <button class="accordion__trigger" aria-controls="sect3" id="accordion3id">
+          <span class="accordion__title">
+            How do I reset my password?
+            <i class="accordion__icon"></i>
+          </span>
+        </button>
+      </h2>
+      <div id="sect3" class="accordion__panel" hidden="hidden" role="region" aria-labelledby="accordion3id">
+        Click “Forgot password” from the login page or “Change password” from your profile page. A reset link will be
+        emailed to you.
+      </div>
 
-    Can I cancel my subscription?
-    Yes! Send us a message and we’ll process your request no questions asked.
+      <h2>
+        <button class="accordion__trigger" aria-controls="sect4" id="accordion4id">
+          <span class="accordion__title">
+            Can I cancel my subscription?
+            <i class="accordion__icon"></i>
+          </span>
+        </button>
+      </h2>
+      <div id="sect4" class="accordion__panel" hidden="hidden" role="region" aria-labelledby="accordion4id">
+        Yes! Send us a message and we'll process your request no questions asked.
+      </div>
 
-    Do you provide additional support?
-    Chat and email support is available 24/7. Phone lines are open during normal business hours.
+      <h2>
+        <button class="accordion__trigger" aria-controls="sect5" id="accordion5id">
+          <span class="accordion__title">
+            Do you provide additional support?
+            <i class="accordion__icon"></i>
+          </span>
+        </button>
+      </h2>
+      <div id="sect5" class="accordion__panel" hidden="hidden" role="region" aria-labelledby="accordion5id">
+        Chat and email support is available 24/7. Phone lines are open during normal business hours.
+      </div>
+    </section>
   </main>
 
   <footer class="attribution">
