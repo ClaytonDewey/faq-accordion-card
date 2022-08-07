@@ -1,9 +1,7 @@
 // Breakpoints
-$bp-small: 23.4375em; // 375x;
 $bp-large: 90em; // 1440px;
 
 // Media Queries
-$mq-small: 'screen and (min-width: #{$bp-small})';
 $mq-large: 'screen and (min-width: #{$bp-large})';
 
 // font weights
@@ -78,7 +76,6 @@ body {
   box-shadow: 0px 10px 40px hsl(257, 35%, 47%);
 
   &__header {
-    margin-bottom: 2rem;
 
     img {
       display: block;
@@ -90,14 +87,22 @@ body {
       transform: translateX(-50%);
     }
     
-    h1 {
-      font-size: $fs-400;
-      text-transform: uppercase;
-      text-align: center;
-      color: $clr-dark-gray;
-    }
+  }
+
+  &__title {
+    font-size: $fs-400;
+    text-transform: uppercase;
+    text-align: center;
+    color: $clr-dark-gray;
+    margin-bottom: 2rem;
+  }
+  
+  @media #{$mq-large} {
+    height: 50.9rem;
+    max-width: 92rem;
   }
 }
+
 
 .accordion {
 
@@ -109,7 +114,7 @@ body {
     background: transparent;
     position: relative;
     border: none;
-    padding: 1.5rem 0;
+    padding: 1.6rem 0;
     color: $clr-dark-gray;
     width: 100%;
     text-align: left;
@@ -152,7 +157,12 @@ body {
   &__panel {
     color: $clr-gray;
     padding-right: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1.8rem;
+    line-height: 1.6;
+  }
+
+  @media #{$mq-large} {
+    display: none;
   }
 }
 

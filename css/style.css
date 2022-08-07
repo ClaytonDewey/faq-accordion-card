@@ -50,9 +50,6 @@ body {
   background-position: center top;
   box-shadow: 0px 10px 40px hsl(257deg, 35%, 47%);
 }
-.card__header {
-  margin-bottom: 2rem;
-}
 .card__header img {
   display: block;
   height: 18rem;
@@ -62,11 +59,18 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
-.card__header h1 {
+.card__title {
   font-size: 3rem;
   text-transform: uppercase;
   text-align: center;
   color: hsl(237deg, 12%, 33%);
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 90em) {
+  .card {
+    height: 50.9rem;
+    max-width: 92rem;
+  }
 }
 
 .accordion__container {
@@ -76,7 +80,7 @@ body {
   background: transparent;
   position: relative;
   border: none;
-  padding: 1.5rem 0;
+  padding: 1.6rem 0;
   color: hsl(237deg, 12%, 33%);
   width: 100%;
   text-align: left;
@@ -111,7 +115,13 @@ body {
 .accordion__panel {
   color: hsl(240deg, 6%, 50%);
   padding-right: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.8rem;
+  line-height: 1.6;
+}
+@media screen and (min-width: 90em) {
+  .accordion {
+    display: none;
+  }
 }
 
 .attribution {
