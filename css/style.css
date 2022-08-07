@@ -50,7 +50,7 @@ body {
   background-position: center top;
   box-shadow: 0px 10px 40px hsl(257deg, 35%, 47%);
 }
-.card__header img {
+.card__header img.mobile {
   display: block;
   height: 18rem;
   width: 23.7rem;
@@ -59,6 +59,9 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
+.card__header img.desktop {
+  display: none;
+}
 .card__title {
   font-size: 3rem;
   text-transform: uppercase;
@@ -66,10 +69,48 @@ body {
   color: hsl(237deg, 12%, 33%);
   margin-bottom: 2rem;
 }
+.card__box {
+  display: none;
+}
 @media screen and (min-width: 90em) {
   .card {
     height: 50.9rem;
     max-width: 92rem;
+    padding: 6.3rem 9.5rem 2.5rem 47.6rem;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position-y: -29.5rem;
+    background-position-x: -57.7rem;
+  }
+  .card__box {
+    position: absolute;
+    z-index: 1000;
+    top: 20.5rem;
+    left: -13rem;
+    display: block;
+  }
+  .card__header {
+    position: absolute;
+    overflow: hidden;
+    width: 38.9rem;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  .card__header img.mobile {
+    display: none;
+  }
+  .card__header img.desktop {
+    display: block;
+    position: absolute;
+    top: 7rem;
+    left: -8.3rem;
+    height: 35.8rem;
+    z-index: 100;
+  }
+  .card__title {
+    text-align: left;
+    margin-bottom: 2.5rem;
   }
 }
 
@@ -118,12 +159,6 @@ body {
   padding-bottom: 1.8rem;
   line-height: 1.6;
 }
-@media screen and (min-width: 90em) {
-  .accordion {
-    display: none;
-  }
-}
-
 .attribution {
   color: white;
   font-size: 11px;
