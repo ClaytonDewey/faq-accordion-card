@@ -141,7 +141,12 @@ body {
       width: 1rem;
       top: 2rem;
       right: 0;
+      transition: transform .25s ease-in-out
     }
+  }
+
+  &__title {
+    pointer-events: none;
   }
 
   &__panel {

@@ -103,6 +103,10 @@ body {
   width: 1rem;
   top: 2rem;
   right: 0;
+  transition: transform 0.25s ease-in-out;
+}
+.accordion__title {
+  pointer-events: none;
 }
 .accordion__panel {
   color: hsl(240deg, 6%, 50%);
