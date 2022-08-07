@@ -69,12 +69,14 @@ body {
   color: hsl(237deg, 12%, 33%);
 }
 
+.accordion__container {
+  border-bottom: 1px solid hsl(240deg, 5%, 91%);
+}
 .accordion__trigger {
   background: transparent;
   position: relative;
   border: none;
   padding: 1.5rem 0;
-  border-bottom: 1px solid hsl(240deg, 5%, 91%);
   color: hsl(237deg, 12%, 33%);
   width: 100%;
   text-align: left;
@@ -83,6 +85,13 @@ body {
 }
 .accordion__trigger:hover {
   color: hsl(14deg, 88%, 65%);
+}
+.accordion__trigger[aria-expanded=true] {
+  color: hsl(237deg, 12%, 33%);
+  font-weight: 700;
+}
+.accordion__trigger[aria-expanded=true] .accordion__icon::after {
+  transform: rotate(-180deg);
 }
 .accordion__icon::after {
   content: "";
@@ -94,6 +103,11 @@ body {
   width: 1rem;
   top: 2rem;
   right: 0;
+}
+.accordion__panel {
+  color: hsl(240deg, 6%, 50%);
+  padding-right: 2rem;
+  padding-bottom: 2rem;
 }
 
 .attribution {
