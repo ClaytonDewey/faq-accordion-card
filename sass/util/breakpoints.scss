@@ -1,0 +1,13 @@
+@use 'sass:map';
+
+// 450px, 768px, 1025px, 1366px, 1920px, 2560px
+// prettier-ignore
+$breakpoints-up: (
+  'tablet': '90em', // 450px
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map.get($breakpoints-up, $size)) {
+    @content;
+  }
+}

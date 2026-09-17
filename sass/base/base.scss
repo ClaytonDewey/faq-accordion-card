@@ -1,0 +1,28 @@
+@use '../util' as *;
+
+html,
+body {
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: inherit;
+}
+
+html {
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  // overflow-style: scrollbar;
+  background: var(--clr-blue);
+  background: linear-gradient(0deg, var(--clr-blue) 0%, var(--clr-violet) 100%);
+  color: var(--clr-light-gray);
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 400;
+  font-size: var(--fs-100);
+}

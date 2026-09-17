@@ -1,0 +1,58 @@
+@use '../util' as *;
+
+.accordion {
+  &__container {
+    border-bottom: rem(1) solid var(--clr-light-gray);
+  }
+
+  &__trigger {
+    background: transparent;
+    position: relative;
+    border: none;
+    padding: rem(16) 0;
+    color: var(--clr-dark-gray);
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--clr-orange);
+    }
+
+    &[aria-expanded='true'] {
+      color: var(--clr-dark-gray);
+      font-weight: 700;
+
+      .accordion__icon::after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &__icon {
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url(../images/icon-arrow-down.svg);
+      background-repeat: no-repeat;
+      display: block;
+      block-size: rem(7.5);
+      inline-size: rem(10);
+      top: rem(20);
+      right: 0;
+      transition: var(--transition);
+    }
+  }
+
+  &__title {
+    pointer-events: none;
+  }
+
+  &__panel {
+    color: var(--clr-gray);
+    padding-inline-end: rem(20);
+    padding-block-end: rem(1.8);
+    line-height: 1.6;
+  }
+}

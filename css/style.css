@@ -1,20 +1,100 @@
+/* CSS Demystified Reset | v0.2 */
 *,
-*::after,
-*::before {
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+/* prevent layout shifts on short pages
+   and long-term improvement for 100vw */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Make the line-height more reader friendly */
+body {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Set tighter line heights on headings & interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Make it so replaced elements are responsive */
+img,
+video,
+iframe {
+  display: block;
+  block-size: auto;
+  max-inline-size: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+/* also prevents zoom on iOS if font sizes are small */
+button,
+select,
+textarea,
+input {
+  font: inherit;
+  font-size: max(16px, 1em);
+}
+
+/* Harry Roberts @csswizardry img reset
+   https://x.com/csswizardry/status/1717841334462005661 */
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+}
+
+:root {
+  --clr-orange: hsl(14, 88%, 65%);
+  --clr-violet: hsl(273, 75%, 66%);
+  --clr-blue: hsl(240, 73%, 65%);
+  --clr-light-gray: hsl(240, 5%, 91%);
+  --clr-gray: hsl(240, 6%, 50%);
+  --clr-dark-gray: hsl(237, 12%, 33%);
+  --clr-dark: hsl(238, 29%, 16%);
+  --fs-400: 1.875rem;
+  --fs-300: 1.25rem;
+  --fs-200: 1.125rem;
+  --fs-100: 0.75rem;
+  --fw-bold: 700;
+  --fw-normal: 400;
+}
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --transition: transform 0.25s ease-in-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition: none;
+  }
 }
 
 html,
 body {
   margin: 0 auto;
   width: 100%;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 html {
-  font-size: 62.5%;
   font-style: normal;
   font-weight: normal;
 }
@@ -25,114 +105,33 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow-style: scrollbar;
-  background: hsl(240deg, 73%, 65%);
-  background: linear-gradient(0deg, hsl(240deg, 73%, 65%) 0%, hsl(273deg, 75%, 66%) 100%);
-  color: hsl(240deg, 5%, 91%);
+  background: var(--clr-blue);
+  background: linear-gradient(0deg, var(--clr-blue) 0%, var(--clr-violet) 100%);
+  color: var(--clr-light-gray);
   font-family: "Kumbh Sans", sans-serif;
   font-weight: 400;
-  font-size: 1.2rem;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  max-width: 32.7rem;
-  background: white;
-  height: 53.5rem;
-  margin: 30px auto;
-  padding: 13rem 2.5rem 2.5rem;
-  border-radius: 2rem;
-  background-image: url(../images/bg-pattern-mobile.svg);
-  background-repeat: no-repeat;
-  background-position: center top;
-  box-shadow: 0px 10px 40px hsl(257deg, 35%, 47%);
-}
-.card__header img.mobile {
-  display: block;
-  height: 18rem;
-  width: 23.7rem;
-  position: absolute;
-  top: -10.7rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.card__header img.desktop {
-  display: none;
-}
-.card__title {
-  font-size: 3rem;
-  text-transform: uppercase;
-  text-align: center;
-  color: hsl(237deg, 12%, 33%);
-  margin-bottom: 2rem;
-}
-.card__box {
-  display: none;
-}
-@media screen and (min-width: 90em) {
-  .card {
-    height: 50.9rem;
-    max-width: 92rem;
-    padding: 6.3rem 9.5rem 2.5rem 47.6rem;
-    background-image: url(../images/bg-pattern-desktop.svg);
-    background-repeat: no-repeat;
-    background-position-y: -29.5rem;
-    background-position-x: -57.7rem;
-  }
-  .card__box {
-    position: absolute;
-    z-index: 1000;
-    top: 20.5rem;
-    left: -13rem;
-    display: block;
-  }
-  .card__header {
-    position: absolute;
-    overflow: hidden;
-    width: 38.9rem;
-    top: 0;
-    left: 0;
-    bottom: 0;
-  }
-  .card__header img.mobile {
-    display: none;
-  }
-  .card__header img.desktop {
-    display: block;
-    position: absolute;
-    top: 7rem;
-    left: -8.3rem;
-    height: 35.8rem;
-    z-index: 100;
-  }
-  .card__title {
-    text-align: left;
-    margin-bottom: 2.5rem;
-  }
+  font-size: var(--fs-100);
 }
 
 .accordion__container {
-  border-bottom: 1px solid hsl(240deg, 5%, 91%);
+  border-bottom: 0.0625rem solid var(--clr-light-gray);
 }
 .accordion__trigger {
   background: transparent;
   position: relative;
   border: none;
-  padding: 1.6rem 0;
-  color: hsl(237deg, 12%, 33%);
+  padding: 1rem 0;
+  color: var(--clr-dark-gray);
   width: 100%;
   text-align: left;
   cursor: pointer;
-  transition: color 0.25s ease-in-out;
+  transition: var(--transition);
 }
 .accordion__trigger:hover {
-  color: hsl(14deg, 88%, 65%);
+  color: var(--clr-orange);
 }
 .accordion__trigger[aria-expanded=true] {
-  color: hsl(237deg, 12%, 33%);
+  color: var(--clr-dark-gray);
   font-weight: 700;
 }
 .accordion__trigger[aria-expanded=true] .accordion__icon::after {
@@ -144,27 +143,91 @@ body {
   background-image: url(../images/icon-arrow-down.svg);
   background-repeat: no-repeat;
   display: block;
-  height: 0.75rem;
-  width: 1rem;
-  top: 2rem;
+  block-size: 0.46875rem;
+  inline-size: 0.625rem;
+  top: 1.25rem;
   right: 0;
-  transition: transform 0.25s ease-in-out;
+  transition: var(--transition);
 }
 .accordion__title {
   pointer-events: none;
 }
 .accordion__panel {
-  color: hsl(240deg, 6%, 50%);
-  padding-right: 2rem;
-  padding-bottom: 1.8rem;
+  color: var(--clr-gray);
+  padding-inline-end: 1.25rem;
+  padding-block-end: 0.1125rem;
   line-height: 1.6;
 }
-.attribution {
-  color: white;
-  font-size: 11px;
-  text-align: center;
-}
 
-.attribution a {
-  color: white;
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-inline-size: 20.4375rem;
+  background: white;
+  block-size: 33.4375rem;
+  margin: 0.8125rem auto;
+  padding: 8.125rem 1.5625rem 1.5625rem;
+  border-radius: 1.25rem;
+  background-image: url(../images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  box-shadow: 0px 10px 40px hsl(257deg, 35%, 47%);
+}
+.card__header img {
+  display: block;
+  block-size: 11.25rem;
+  inline-size: 14.8125rem;
+  position: absolute;
+  top: -6.6875rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.card__title {
+  font-size: var(--fs-400);
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--clr-dark-gray);
+  margin-block-end: 1.25rem;
+}
+.card__box {
+  display: none;
+}
+@media (min-width: 90em) {
+  .card {
+    block-size: 31.8125rem;
+    max-inline-size: 57.5rem;
+    padding: 3.9375rem 5.9375rem 1.5625rem 29.75rem;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position-y: -18.4375rem;
+    background-position-x: -36.0625rem;
+  }
+  .card__box {
+    position: absolute;
+    z-index: 1000;
+    top: 12.8125rem;
+    left: -8.125rem;
+    display: block;
+  }
+  .card__header {
+    position: absolute;
+    overflow: hidden;
+    inline-size: 24.3125rem;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  .card__header img {
+    position: absolute;
+    top: 4.375rem;
+    left: -5.1875rem;
+    block-size: 22.375rem;
+    z-index: 100;
+  }
+  .card__title {
+    text-align: left;
+    margin-block-end: 1.5625rem;
+  }
 }

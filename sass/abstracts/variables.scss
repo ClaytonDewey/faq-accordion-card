@@ -1,0 +1,31 @@
+@use '../util' as *;
+
+:root {
+  // colors
+  --clr-orange: hsl(14, 88%, 65%);
+  --clr-violet: hsl(273, 75%, 66%);
+  --clr-blue: hsl(240, 73%, 65%);
+  --clr-light-gray: hsl(240, 5%, 91%);
+  --clr-gray: hsl(240, 6%, 50%);
+  --clr-dark-gray: hsl(237, 12%, 33%);
+  --clr-dark: hsl(238, 29%, 16%);
+
+  // font sizes
+  --fs-400: #{rem(30)};
+  --fs-300: #{rem(20)};
+  --fs-200: #{rem(18)};
+  --fs-100: #{rem(12)};
+
+  // font weights
+  --fw-bold: 700;
+  --fw-normal: 400;
+
+  // Transitions
+  @media (prefers-reduced-motion: no-preference) {
+    --transition: transform 0.25s ease-in-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    --transition: none;
+  }
+}
